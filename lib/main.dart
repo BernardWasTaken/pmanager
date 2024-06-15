@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:pmanager/login.dart';
 import '../resources.dart';
 
 class Cell extends StatefulWidget {
@@ -15,9 +16,9 @@ class _CellState extends State<Cell> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 30),
-      alignment: Alignment.bottomCenter,
-      child: MyNavbar(),
+      margin: const EdgeInsets.only(bottom: 30, top: 30, left: 30, right: 30),
+      alignment: Alignment.center,
+      child: LightContainer(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height * 0.584),
     );
   }
 }
@@ -37,11 +38,11 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-          backgroundColor: Color.fromRGBO(22, 30, 48, 1),
+          backgroundColor: primary,
           body: Center(
-            child: Cell(),
+            child: LoginPage(),
           )),
     );
   }
